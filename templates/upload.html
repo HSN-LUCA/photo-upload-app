@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ settings.title }} - Upload</title>
+    <style>
+        body { 
+            font-family: Arial; max-width: 500px; margin: 50px auto; padding: 20px;
+            background: {{ settings.background_color }};
+        }
+        .header { text-align: center; margin-bottom: 30px; }
+        .logo { max-height: 80px; margin-bottom: 10px; }
+        h2 { color: #333; margin: 10px 0; }
+        input, button { 
+            padding: 12px; margin: 10px 0; width: 100%; border: 1px solid #ddd;
+            border-radius: 8px; font-size: 16px;
+        }
+        button { 
+            background: {{ settings.primary_color }}; color: white; border: none; 
+            cursor: pointer; font-weight: bold; transition: all 0.3s;
+        }
+        button:hover { opacity: 0.9; transform: translateY(-1px); }
+        .success { 
+            background: #d4edda; color: #155724; padding: 15px; 
+            border-radius: 8px; margin: 20px 0; text-align: center;
+        }
+        .error { 
+            background: #f8d7da; color: #721c24; padding: 15px; 
+            border-radius: 8px; margin: 20px 0; text-align: center;
+        }
+        .nav-links { text-align: center; margin-top: 20px; }
+        .nav-links a { 
+            color: {{ settings.primary_color }}; text-decoration: none; 
+            margin: 0 15px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        {% if settings.logo %}
+        <img src="{{ settings.logo }}" alt="Logo" class="logo">
+        {% endif %}
+        <h2>{{ settings.title }} - Upload Photo</h2>
+    </div>
+    
+    {% if success %}
+        <div class="success">Photo uploaded successfully!</div>
+    {% endif %}
+    
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" accept=".png,.jpg,.jpeg" required>
+        <input type="tel" name="phone" placeholder="05xxxxxxxx" pattern="05[0-9]{8}" maxlength="10" required>
+        <button type="submit">Upload Photo</button>
+    </form>
+    
+
+</body>
+</html>
