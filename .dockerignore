@@ -1,0 +1,33 @@
+# flyctl launch added from .gitignore
++ **/__pycache__
++ **/*.pyc
++ **/env
++ **/venv
++ **/.venv
++ **/pip-log.txt
++ **/pip-delete-this-directory.txt
++ **/.tox
++ **/.coverage
++ **/.coverage.*
++ **/.cache
++ **/nosetests.xml
++ **/coverage.xml
++ **/*.cover
++ **/*.log
++ **/.git
++ **/.mypy_cache
++ **/.pytest_cache
++ **/.hypothesis
++ **/*.db
++ **/*.sqlite3
++ **/uploads
++ !**/uploads/.gitkeep
++ **/.env
++ **/.flaskenv
++ **/.vscode
++ **/.idea
++ **/*.swp
++ **/*.swo
++ **/.DS_Store
++ **/Thumbs.db
+fly.toml
